@@ -155,7 +155,7 @@ now you can visit this server on your `http://localhost:8000/api/`
 
 ## TODO
 
-Have to say I underestimated the time the project would take. I just take a look for the requirements and then actually started dong this on Sunday.
+Have to say I underestimated the time the project would take. I just take a look for the requirements/setup the dev env on Friday and then actually started dong this on Sunday.
 The django part really took me a lot of time :( never used this framework before...
 
 thus, in my plan, there are still somethings to do...
