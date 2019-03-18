@@ -22,7 +22,7 @@ class Game extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.info}>
-          {status && <Text style={{ margin: 0 }} type="bold xl">{status}</Text>}
+          {status && <Text style={{ margin: 0, marginRight:20 }} type="bold xl">{status}</Text>}
           <Link to="/game/new">
             <Button className={styles.restart}>Restart</Button>
           </Link>

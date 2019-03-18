@@ -5,3 +5,22 @@
   flex-wrap: wrap;
   align-content: center;
 }
+
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 2px solid grey;
+  margin: 20px;
+}
+
+.tag {
+  position: absolute;
+  padding-left: 20px;
+  padding-right: 10px;
+  top: 10px;
+  left: 0px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

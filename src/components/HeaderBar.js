@@ -12,13 +12,13 @@ function HeaderBar({ title, username, token, logout }) {
   if (title !== document.title) document.title = title
   return (
     <div className={styles.container}>
-      <Text type='l' className={styles.logo}>{title}</Text>
+      <Link to="/game/new"><Text type='l' className={styles.logo}>{title}</Text></Link>
       {token ? <div style={{ display: 'flex', alignItems: 'center' }}>
         <Text>{username}</Text>
         <WhiteBlank w={10} />
-        <Link to="/history"><Button onClick={logout}><Text type="s">History</Text></Button></Link>
+        <Link to="/history"><Button><Text type="s">History</Text></Button></Link>
         <WhiteBlank w={10} />
-        <Button><Text type="s">Log out</Text></Button>
+        <Button><Text onClick={logout} type="s">Log out</Text></Button>
       </div> : <Link to="/login"><Button><Text type="s">Log in</Text></Button></Link>}
     </div>
   );

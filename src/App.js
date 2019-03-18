@@ -19,7 +19,7 @@ function Minesweeper({ token }) {
         {!token && <Route exact path={['/', '/login']} component={Login} />}
         <Route path="/game/new" component={NewGame} />
         <Route path="/game/:game_id" component={Game} />
-        <Route path="/history" component={Histroy} />
+        {token && <Route path="/history" component={Histroy} />}
         <Redirect to={"/game/new"} />
       </Switch>
     </>

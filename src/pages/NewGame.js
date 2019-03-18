@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
 
 const DIFFICULTIES = {
-  easy: [5, 5, 5],
+  easy: [5, 5, 2],
   normal: [8, 8, 10],
   hard: [12, 12, 20]
 }

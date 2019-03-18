@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/'
+// for local dev
+// const API_URL = 'http://localhost:8000/api/'
+
+const API_URL = 'https://dp914rbtw4.execute-api.ca-central-1.amazonaws.com/dev/api/'
 
 export const game = {
   state: {
@@ -44,13 +47,12 @@ export const game = {
       dispatch.game.update(data)
     },
     async create({ size_x, size_y, mine_num }, rootState) {
-      const token = rootState.user.token
       const { data } = await axios.post(_api('games'), {
         // player,
         size_x,
         size_y,
         mine_num
-      })
+      }, _withAuth(rootState))
       dispatch.game.update(data)
       return data
     }
@@ -71,7 +73,7 @@ export const history = {
     }
   },
   effects: (dispatch) => ({
-    async fetch(rootState) {
+    async fetch(args, rootState) {
       const { data } = await axios.get(_api('games'), _withAuth(rootState))
       dispatch.history.update({
         list: data
@@ -103,12 +105,12 @@ export const user = {
         const { data } = await axios.post(_api('login'), { username, password })
         localStorage.setItem('user_token', data.token)
         dispatch.user.update(data)
-      }catch(err){
+      } catch (err) {
         dispatch.user.update({
           is_login_error: true
         })
       }
-      
+
     },
     async signup({ username, password, email }) {
       const { data } = await axios.post(_api('users'), { username, password, email })
@@ -123,7 +125,7 @@ export const user = {
 
 
 function _withAuth(rootState) {
-  return {
+  return !rootState.user.token ? {} : {
     headers: {
       Authorization: 'Bearer ' + rootState.user.token
     }
