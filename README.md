@@ -5,6 +5,7 @@
 Although it is just a simple game, my main effort is to make this project scalable and maintainable
 
 #### about the django API server
+
 - use AWS lambda to deploy back-end server
 - use AWS S3 to serve static file
 - use AWS RDS as dev database
@@ -20,6 +21,15 @@ Although it is just a simple game, my main effort is to make this project scalab
 - use scss
 - use Heroku to serve the React app
 
+## [ONLINE WEBSITE](https://zhexu-minesweeper.herokuapp.com/login)
+
+it could take half a minute to open this website for first time, because the server could be sleeping
+ 
+ https://zhexu-minesweeper.herokuapp.com/login
+ 
+- [React app repo](https://github.com/SunnySunnyOMG/minesweeper-front-end)
+- [Django app repo](https://github.com/SunnySunnyOMG/minesweeper-backend)
+- API URL: https://dp914rbtw4.execute-api.ca-central-1.amazonaws.com/dev/api/
 
 ## More details
 
