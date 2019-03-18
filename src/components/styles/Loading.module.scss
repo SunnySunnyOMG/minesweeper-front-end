@@ -1,0 +1,5 @@
+@import '../../config/global.scss';
+.overlay {
+  @include mask;
+  background-color: rgba(0,0,0,0.5)
+} 

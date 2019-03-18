@@ -1,26 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './config/global.scss';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { init } from '@rematch/core';
+import * as models from './models';
+import Game from './pages/Game';
+import NewGame from './pages/NewGame';
+import Login from './pages/Login';
+import HeaderBar from './components/HeaderBar';
+import { connect } from 'react-redux'
+import Histroy from './pages/Histroy';
+
+function Minesweeper({ token }) {
+  return (
+    <>
+      <HeaderBar/>
+      <Switch>
+        {!token && <Route exact path={['/', '/login']} component={Login} />}
+        <Route path="/game/new" component={NewGame} />
+        <Route path="/game/:game_id" component={Game} />
+        <Route path="/history" component={Histroy} />
+        <Redirect to={"/game/new"} />
+      </Switch>
+    </>
+  )
+}
+
+const AppContainer = connect(state => ({ token: state.user.token }))(Minesweeper)
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={init({ models })}>
+        <BrowserRouter>
+          <AppContainer />
+        </BrowserRouter>
+      </Provider>
     );
   }
 }

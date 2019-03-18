@@ -1,0 +1,20 @@
+@import '../../config/global.scss';
+$black: #565656;
+$color_line: rgb(225, 125, 94);
+
+.container {
+  height: 40px;
+  width: 40vw;
+  @include flex-center;
+  border: 2px solid $color_line;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.input {
+  width: 100%;
+  font-size: 25px;
+  border-style: none;
+  outline: none;
+  color: $black
+}

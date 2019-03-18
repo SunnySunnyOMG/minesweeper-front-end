@@ -1,0 +1,21 @@
+@import '../../config//global.scss';
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.restart {
+  height: 50px;
+  width: 270px;
+  border-radius: 20px;
+  background: red;
+  color: white;
+}
+
+.info{
+  @include flex-center;
+  flex-direction: row;
+}

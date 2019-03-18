@@ -1,0 +1,16 @@
+@import '../../config/global.scss';
+
+$nice_color: #d4424f;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.button {
+  background-color: $nice_color;
+  width: 200px;
+  height: 80px;
+}

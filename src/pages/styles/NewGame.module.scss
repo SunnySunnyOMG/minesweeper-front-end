@@ -1,0 +1,30 @@
+@import '../../config/global';
+
+.overlay {
+  @include flex-center;
+}
+
+.container {
+  @include flex-center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+
+.easy {
+  background-color: #dfceab
+}
+
+.normal {
+  background-color:  #ea8827
+}
+
+.hard {
+  background-color:  #093654;
+  color: white;
+}

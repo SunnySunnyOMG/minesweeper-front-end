@@ -1,0 +1,14 @@
+@import '../../config/global';
+.container {
+  @include flex-center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.margin {
+  margin: 5px;
+}

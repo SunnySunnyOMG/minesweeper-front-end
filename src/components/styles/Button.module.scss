@@ -1,0 +1,23 @@
+.container {
+  border-radius: 10px;
+  transition: all .3s;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container[id=disabled] {
+  background-color: grey;
+}
+
+.container[id=opacity]:hover {
+  opacity: 0.8;
+}
+
+.container[id=scale]:hover {
+  transform: scale(1.05);
+}
+
+.container[id=shadow]:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 40px;
+}
