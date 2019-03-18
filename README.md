@@ -117,24 +117,46 @@ npm start
 ### Django App
   
 #### WILL FINISH THIS SECTION WHEN HAVE TIME
-~~(haven't tested on another PC)~~
-~~as I metioned, the back-end part is developed under a docker env, thus, this part should take a little more effort~~
+(haven't tested on another PC)
+as I metioned, the back-end part is developed under a docker env, thus, this part should take a little more effort~~
 
- - ~~fistly, make sure [Docker Desktop](https://www.docker.com/products/docker-desktop) is installed and then `cd` to the `DockerFile` dir~~
+ - fistly, make sure [Docker Desktop](https://www.docker.com/products/docker-desktop) is installed and then `cd` to the `DockerFile` dir
 
 ```
 cd your/path/to/dir/backend
 ```
 
-- ~~build your image~~
+- build your image
+```
+cd to/your/django/app
+```
+
+then create an image from the `DokcerFile`
+```
+docker build -t <your-image-name> .
+```
 
 
-
-- ~~then run， this command will run a contaner and destory it when exit~~
+- then run this command, which will run a contaner and destory it when exit
 ```
 docker run -p 8000:8000 -ti -e -v "$(pwd):/var/task" -v --rm myzappa
 ```
 
+- build the required virtual environment
+```
+python -m venv ve
+```
+- then install dependencies
+```
+source ve/bin/activate
+(ve) > pip install -r requirements.txt
+```
+- run the dev server
+```
+(ve) > python manage.py runserver 0.0.0.0:8000
+```
+
+now you can visit this server on your `http://localhost:8000/api/`
 
 ## TODO
 
