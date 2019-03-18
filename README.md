@@ -126,12 +126,7 @@ as I metioned, the back-end part is developed under a docker env, thus, this par
 cd your/path/to/dir/backend
 ```
 
-- build your image
-```
-cd to/your/django/app
-```
-
-then create an image from the `DokcerFile`
+- then create an image from the `DokcerFile`
 ```
 docker build -t <your-image-name> .
 ```
