@@ -134,7 +134,7 @@ docker build -t <your-image-name> .
 
 - then run this command, which will run a contaner and destory it when exit
 ```
-docker run -p 8000:8000 -ti -e -v "$(pwd):/var/task" -v --rm myzappa
+docker run -p 8000:8000 -ti -e -v "$(pwd):/var/task" -v --rm <your-image-name>
 ```
 
 - build the required virtual environment
