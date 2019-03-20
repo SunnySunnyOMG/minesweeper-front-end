@@ -2,9 +2,10 @@
 
 ## Summary
 
-although it is just a simple game, my main effort is to make this project scalable and maintainable
+Although it is just a simple game, my main effort is to make this project scalable and maintainable
 
 #### about the django API server
+
 - use AWS lambda to deploy back-end server
 - use AWS S3 to serve static file
 - use AWS RDS as dev database
@@ -14,12 +15,21 @@ although it is just a simple game, my main effort is to make this project scalab
 
 #### about the React web app
 
-- only use client-side rendering for this app
+- currently only use client-side rendering for this app
 - use react-router as front-end router
 - use redux and its middleware to manage state, side-effect 
 - use scss
 - use Heroku to serve the React app
 
+## [ONLINE WEBSITE](https://zhexu-minesweeper.herokuapp.com/login)
+
+it could take half a minute to open this website for first time, because the server could be sleeping
+ 
+ https://zhexu-minesweeper.herokuapp.com/login
+ 
+- [React app repo](https://github.com/SunnySunnyOMG/minesweeper-front-end)
+- [Django app repo](https://github.com/SunnySunnyOMG/minesweeper-backend)
+- API URL: https://dp914rbtw4.execute-api.ca-central-1.amazonaws.com/dev/api/
 
 ## More details
 
@@ -38,23 +48,23 @@ although it is just a simple game, my main effort is to make this project scalab
 this page is only available for a guest
 - a guest can login or sign up in this page
 - you can skip this by click the *let's play* on the left of header
-![565a3e7f.png](:storage/62ed23f7-3748-4c09-a609-2214f92ebf8b/565a3e7f.png)
+![565a3e7f.png](https://ucarecdn.com/001487f1-d86c-4118-9fa2-6f8cd2b91ad0/WX201903180403512x.png)
 
 ##### 2 New Game
 this page is available to both user and guest
 
 - the games created by a guest can only be found by/ recovered by the game page URL
 - currently have 3 options to play, but this is totally customizable
-![8efaf728.png](:storage/62ed23f7-3748-4c09-a609-2214f92ebf8b/8efaf728.png)
+![8efaf728.png](https://ucarecdn.com/c0f65265-dcc9-4b5e-9503-26330bad5afd/WX201903180406492x.png)
 
-![e2deb338.png](:storage/62ed23f7-3748-4c09-a609-2214f92ebf8b/e2deb338.png)
+![e2deb338.png](https://ucarecdn.com/cadca26a-8513-4f77-ab7f-e42c47e6c0f8/WX201903180405542x.png)
 
 ##### 3 Game Page
 this page is available to both user and guest
 
 - use right mouse button to flag/unflag a block
 - use left mouse button to reveal a block
-![8d94c8b2.png](:storage/62ed23f7-3748-4c09-a609-2214f92ebf8b/8d94c8b2.png)
+![8d94c8b2.png](https://ucarecdn.com/e2b78c89-2c24-46fa-b133-92cd8d333c96/WX201903180408212x.png)
 
 
 ##### 4 History
@@ -62,7 +72,7 @@ this page is only available for a user
 
 - you can view the basic info on the cards cover
 - when click on it, page will nav to its **game page**
-![b186f9a3.png](:storage/62ed23f7-3748-4c09-a609-2214f92ebf8b/b186f9a3.png)
+![b186f9a3.png](https://ucarecdn.com/be5db8ec-c923-4a3b-8ab9-5dd974bb973f/WX201903180409422x.png)
 
 ## Mimesweeper: Back-end part
 
@@ -107,29 +117,45 @@ npm start
 ### Django App
   
 #### WILL FINISH THIS SECTION WHEN HAVE TIME
-~~(haven't tested on another PC)~~
-~~as I metioned, the back-end part is developed under a docker env, thus, this part should take a little more effort~~
+(haven't tested on another PC)
+as I metioned, the back-end part is developed under a docker env, thus, this part should take a little more effort~~
 
- - ~~fistly, make sure [Docker Desktop](https://www.docker.com/products/docker-desktop) is installed and then `cd` to the `DockerFile` dir~~
+ - fistly, make sure [Docker Desktop](https://www.docker.com/products/docker-desktop) is installed and then `cd` to the `DockerFile` dir
 
 ```
 cd your/path/to/dir/backend
 ```
 
-- ~~build your image~~
-
-
-
-- ~~then run， this command will run a contaner and destory it when exit~~
+- then create an image from the `DokcerFile`
 ```
-docker run -p 8000:8000 -ti -e -v "$(pwd):/var/task" -v --rm myzappa
+docker build -t <your-image-name> .
 ```
 
-maybe a better practice to hold a local database on volumes instead of RDS for local developing...
+
+- then run this command, which will run a contaner and destory it when exit
+```
+docker run -p 8000:8000 -ti -e -v "$(pwd):/var/task" -v --rm <your-image-name>
+```
+
+- build the required virtual environment
+```
+python -m venv ve
+```
+- then install dependencies
+```
+source ve/bin/activate
+(ve) > pip install -r requirements.txt
+```
+- run the dev server
+```
+(ve) > python manage.py runserver 0.0.0.0:8000
+```
+
+now you can visit this server on your `http://localhost:8000/api/`
 
 ## TODO
 
-Have to say I underestimated the time the project would take. I just take a look for the requirements and then actually started dong this on Sunday.
+Have to say I underestimated the time the project would take. I just take a look for the requirements/setup the dev env on Friday and then actually started dong this on Sunday.
 The django part really took me a lot of time :( never used this framework before...
 
 thus, in my plan, there are still somethings to do...
