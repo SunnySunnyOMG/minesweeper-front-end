@@ -5,7 +5,7 @@ import login_styles from './styles/Login.module.scss';
 import Button from '../components/Button';
 import Text from '../components/Text';
 import { Link } from 'react-router-dom';
-import TextInput from '../components/TextInput';
+
 
 const DIFFICULTIES = {
   easy: [5, 5, 2],

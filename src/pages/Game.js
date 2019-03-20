@@ -41,6 +41,8 @@ class Game extends Component {
         return ''
       case 'LT':
         return 'Oops, you lose'
+      default:
+        console.error('wrong status', status)
     }
   }
 }

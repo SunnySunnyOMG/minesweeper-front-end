@@ -16,7 +16,7 @@ function Minesweeper({ token }) {
     <>
       <HeaderBar/>
       <Switch>
-        {!token && <Route exact path={['/', '/login']} component={Login} />}
+        {!token && <Route exact path={['/', '/login', '/signup']} component={Login} />}
         <Route path="/game/new" component={NewGame} />
         <Route path="/game/:game_id" component={Game} />
         {token && <Route path="/history" component={Histroy} />}

@@ -7,8 +7,7 @@ import { connect } from 'react-redux';
 import { Loading } from './Loading';
 
 const range = len => Array.from(new Array(len), (val, index) => index);
-const UNKOWN = 9
-const FLAG = 10
+
 function Map({ sizeX, sizeY, snapshot, reveal, flag }) {
   return (
     <div className={styles.container}>
